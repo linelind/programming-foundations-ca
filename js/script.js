@@ -76,7 +76,27 @@ function subtractTwoNumbers(number1, number2) {
 }
 
 var subtractionDiv = document.querySelector("#subtraction");
-subtractionDiv.innerHTML = subtractTwoNumbers("10", 7);
+subtractionDiv.innerHTML = subtractTwoNumbers("10", 7.3);
 
 
 //Question 6
+
+var buttonPage = document.querySelector(".page");
+
+buttonPage.onclick = function() {
+
+	var buttonTitle = document.querySelector("title");
+	var buttonBody = document.querySelector("body");
+	var buttonHeading = document.querySelector("h1");
+	var buttonList = document.querySelector("ul");
+
+    buttonTitle.innerHTML = "Updated title";
+	buttonBody.style.backgroundColor = "yellow"; 
+	buttonHeading.style.color = "green";
+	buttonHeading.style.fontFamily = "impact";
+	buttonHeading.innerHTML = "<a href=#>" + buttonHeading.innerHTML + "</a>";
+	buttonList.style.listStyleType = "none";
+	buttonList.style.padding = "0";
+};
+
+//Question 7
