@@ -65,9 +65,9 @@ whatIDontLike("celery");
 
 
 //Question 5
-function subtractTwoNumbers(number1, number2) {
-	var convertedNum1 = parseFloat(number1);
-	var convertedNum2 = parseFloat(number2);
+function subtractTwoNumbers(num1, num2) {
+	var convertedNum1 = parseFloat(num1);
+	var convertedNum2 = parseFloat(num2);
 
 	if (isNaN(convertedNum1) || isNaN(convertedNum2)) {
 	return "Invalid argument(s)";
@@ -99,4 +99,78 @@ buttonPage.onclick = function() {
 	buttonList.style.padding = "0";
 };
 
+
 //Question 7
+
+var buttonPrice = document.querySelector(".price");
+
+function addition(num1, num2, num3) {
+    // try and convert all the arguments to number values
+    var convertedNum1 = parseFloat(num1);
+    var convertedNum2 = parseFloat(num2);
+    var convertedNum3 = parseFloat(num3);
+
+    // if any of the arguments cannot be converted to a number they will have the value NaN - Not a Number
+    // check for a NaN value using isNaN()
+    if (isNaN(convertedNum1) || isNaN(convertedNum2) || isNaN(convertedNum3)) {
+        // as soon as a return statement is encountered the function will exit
+        return "Invalid argument types";
+    }
+
+    return convertedNum1 + convertedNum2 + convertedNum3;
+
+}
+
+// select the p element
+var totalPrice = document.querySelector("#total");
+
+var sum = addition(15.6, "28.3", null);
+
+totalPrice.innerHTML = sum;
+
+
+
+/*
+var toys = [
+	{
+		name: "Lego",
+		price: 15.6,
+	},
+	{
+		name: "Master of the Universe",
+		price: "28.3",
+	},
+	{
+		name: "Barbie",
+		price: null,
+	},
+	{
+		name: "Mr Potato Head",
+		price: 89.99,
+	},
+];
+
+var buttonPrice = document.querySelector(".price");
+var totalPrice = document.querySelector("#total");
+
+buttonPage.onclick = function() {
+	for (var i = 0; i < toys.length; i++) {
+
+		var itemPrice = toys[i].price;
+
+		var convertedNumber1 = parseFloat(itemPrice[0]);
+		var convertedNumber2 = parseFloat(itemPrice[1]);
+		var convertedNumber3 = parseFloat(itemPrice[2]);
+		var convertedNumber4 = parseFloat(itemPrice[3]);
+
+		if (isNaN(convertedNumber1) || isNaN(convertedNumber2) || isNaN(convertedNumber3) || isNaN(convertedNumber4)) {
+			console.log("Invalid argument types");
+		} 
+		else {
+			var total = convertedNumber1 + convertedNumber2 + convertedNumber3 + convertedNumber4;
+			totalPrice.innerHTML += totalPrice.innerHTML + "<p>" + total + "</p>";
+		}
+
+	}
+}
+*/
