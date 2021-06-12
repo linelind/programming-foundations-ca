@@ -3,7 +3,8 @@ var outOfStock = true;
 
 if (outOfStock === true) {
     console.log("Out of stock");
-} else {
+} 
+else {
     console.log("In stock");
 }
 
@@ -43,13 +44,39 @@ var games = [
 var gamesContainer = document.querySelector("ul");
 
 for (var i = 0; i < games.length; i++) {
-   
     if (games[i].rating <= 3.5 && games[i].rating > 0) {
-        
-    gamesContainer.innerHTML += "<li>" + games[i].title + ": " + games[i].rating + "</li>";
-       
-    console.log(games[i].title + ": " + games[i].rating);
-
+		gamesContainer.innerHTML += "<li>" + games[i].title + ": " + games[i].rating + "</li>";
+       	console.log(games[i].title + ": " + games[i].rating);
     }
 }
 
+
+//Question 4
+function whatIDontLike(myDislikes) {
+	if (typeof myDislikes !== "string") {
+		console.log("Please send in a string");
+	} 
+	else {
+		console.log("I don't like " + myDislikes);
+	}
+}
+
+whatIDontLike("celery");
+
+
+//Question 5
+function subtractTwoNumbers(number1, number2) {
+	var convertedNum1 = parseFloat(number1);
+	var convertedNum2 = parseFloat(number2);
+
+	if (isNaN(convertedNum1) || isNaN(convertedNum2)) {
+	return "Invalid argument(s)";
+}	
+	return convertedNum1 - convertedNum2;
+}
+
+var subtractionDiv = document.querySelector("#subtraction");
+subtractionDiv.innerHTML = subtractTwoNumbers("10", 7);
+
+
+//Question 6
