@@ -8,14 +8,16 @@ else {
     console.log("In stock");
 }
 
+
 //Question 2
-var selectedNumber = 20;
+var selectedNumber = 17;
 
 for (var i = 15; i <= 25; i++) {
     if (selectedNumber === 17 || selectedNumber === 20) {
         console.log(selectedNumber);
     }
 }
+
 
 //Question 3
 var games = [
@@ -44,20 +46,19 @@ var games = [
 var gamesContainer = document.querySelector("ul");
 
 for (var i = 0; i < games.length; i++) {
-    if (games[i].rating <= 3.5 && games[i].rating > 0) {
+    if (games[i].rating < 3.5 && games[i].rating > 0) {
 		gamesContainer.innerHTML += "<li>" + games[i].title + ": " + games[i].rating + "</li>";
-       	console.log(games[i].title + ": " + games[i].rating);
     }
 }
 
 
 //Question 4
-function whatIDontLike(myDislikes) {
-	if (typeof myDislikes !== "string") {
+function whatIDontLike(myDislike) {
+	if (typeof myDislike !== "string") {
 		console.log("Please send in a string");
 	} 
 	else {
-		console.log("I don't like " + myDislikes);
+		console.log("I don't like " + myDislike);
 	}
 }
 
@@ -80,11 +81,9 @@ subtractionDiv.innerHTML = subtractTwoNumbers("10", 7.3);
 
 
 //Question 6
-
 var buttonPage = document.querySelector(".page");
 
 buttonPage.onclick = function() {
-
 	var buttonTitle = document.querySelector("title");
 	var buttonBody = document.querySelector("body");
 	var buttonHeading = document.querySelector("h1");
@@ -101,36 +100,6 @@ buttonPage.onclick = function() {
 
 
 //Question 7
-
-var buttonPrice = document.querySelector(".price");
-
-function addition(num1, num2, num3) {
-    // try and convert all the arguments to number values
-    var convertedNum1 = parseFloat(num1);
-    var convertedNum2 = parseFloat(num2);
-    var convertedNum3 = parseFloat(num3);
-
-    // if any of the arguments cannot be converted to a number they will have the value NaN - Not a Number
-    // check for a NaN value using isNaN()
-    if (isNaN(convertedNum1) || isNaN(convertedNum2) || isNaN(convertedNum3)) {
-        // as soon as a return statement is encountered the function will exit
-        return "Invalid argument types";
-    }
-
-    return convertedNum1 + convertedNum2 + convertedNum3;
-
-}
-
-// select the p element
-var totalPrice = document.querySelector("#total");
-
-var sum = addition(15.6, "28.3", null);
-
-totalPrice.innerHTML = sum;
-
-
-
-/*
 var toys = [
 	{
 		name: "Lego",
@@ -153,24 +122,20 @@ var toys = [
 var buttonPrice = document.querySelector(".price");
 var totalPrice = document.querySelector("#total");
 
-buttonPage.onclick = function() {
+var total = 0;
+
+buttonPrice.onclick = function() {
 	for (var i = 0; i < toys.length; i++) {
 
-		var itemPrice = toys[i].price;
+		var currentPrice = toys[i].price;
 
-		var convertedNumber1 = parseFloat(itemPrice[0]);
-		var convertedNumber2 = parseFloat(itemPrice[1]);
-		var convertedNumber3 = parseFloat(itemPrice[2]);
-		var convertedNumber4 = parseFloat(itemPrice[3]);
-
-		if (isNaN(convertedNumber1) || isNaN(convertedNumber2) || isNaN(convertedNumber3) || isNaN(convertedNumber4)) {
-			console.log("Invalid argument types");
-		} 
-		else {
-			var total = convertedNumber1 + convertedNumber2 + convertedNumber3 + convertedNumber4;
-			totalPrice.innerHTML += totalPrice.innerHTML + "<p>" + total + "</p>";
+		if (currentPrice === null) {
+			currentPrice = 0;
 		}
+	
+		var convertedPrice = parseFloat(currentPrice);
 
-	}
+		total += convertedPrice;
+		totalPrice.innerHTML = "<p>" + total + "</p>";
+	}	
 }
-*/
